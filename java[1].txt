@@ -1,0 +1,1134 @@
+PRACTICAL NO. 1
+
+AIM: - Program to reverse the digits of the no.
+
+PROGRAM:
+
+import java.io.*;
+public class reverse
+{
+public static void main (String args[])
+{
+DataInputStream in=new DataInputStream(System.in);
+int n=0,rev=0,rem=0;
+try
+{
+System.out.printin("Enter number:");
+n=Integer.parseInt(in.readLine());
+}
+
+catch (Exeption f)
+{}
+while (n>0)
+{
+rem=n%10;
+rev=rev*10+rem;
+n=n/10;
+}
+System.out.println("\n\t Rev No="+rev);
+}
+
+OUTPUT:
+
+Enter the no.
+12345
+Reverse no. 
+54321
+
+
+PRACTICAL NO. 2
+
+AIM: - Program to calculate & print the first m Fibonacci numbers.
+PROGRAM:
+
+import java.io.*;
+public class fibo
+{
+public static void main(String args[])
+{
+DataInputStream in=new DataInputStream(System.in);
+int iFibOne = 0, iFibTwo = 1;
+try
+{
+ 
+System.out.println("Fibonacci series printing ...... "); 
+
+System.out.println(iFibOne + "," + iFibTwo + ","); 
+}
+catch(Exception e)
+{}
+
+do
+{ 
+int cur = iFibOne + iFibTwo; 
+iFibOne = iFibTwo; 
+iFibTwo = cur; 
+System.out.println(cur + ","); 
+}
+while(iFibTwo < 100); 
+}
+}
+
+
+
+
+
+OUTPUT:
+
+Fibonacci series printing........
+0,
+1,
+1,
+2,
+3,
+5,
+8,
+13,
+21,
+34,
+55,
+89,
+144 
+
+
+
+
+
+
+
+
+
+
+
+
+PRACTICAL NO. 3
+AIM: - Program to compute the sum of the digits of a given integer number.
+
+PROGRAM:
+
+import java.io.*;
+class sum
+{
+public static void main(String args[])
+{
+DataInputStream in=new DataInputStream(System.in);
+int num=0,sum=0;
+try
+{
+System.out.println("Enter number:");
+num=Integer.parseInt(in.readLine());
+}
+catch (Exception e)
+{} 
+while (num > 0)
+{ 
+sum += num % 10; 
+num /= 10; 
+} 
+System.out.println("\n\t Sum of the numbers="+sum);
+}
+}
+
+
+OUTPUT:
+
+Enter number:
+12345
+Sum of the number=15
+
+
+
+PRACTICAL NO. 4
+AIM: - Program to arrange Minal, Pooja, Shama, Geeta, Meeta, Mohan in ascending order.
+
+PROGRAM:
+
+class StringOrdering
+{
+ static String name[]={"Minal","Pooja","Shama","Geeta","Meeta","Mohan"};
+ public static void main(String args[])
+ {
+   int size=name.length;
+   String temp=null;
+   for(int i=0;i<size;i++)
+   {
+    for(int j=i+1;j<size;j++)
+     {
+	if((name[j].compareTo(name[i]))<0)
+        {
+		temp=name[i];
+		name[i]=name[j];
+		name[j]=temp;
+        }
+      }
+    }
+   for(int i=0;i<size;i++)
+   {
+     System.out.println(name[i]);
+   }
+  }
+}
+
+OUTPUT:
+
+Geeta
+Meeta
+Minal
+Mohan
+Pooja
+Shama
+PRACTICAL NO. 5
+AIM: - Program to multiply two matrices.
+
+PROGRAM:
+
+class matrix
+{
+  public static void main(String[] args) 
+ {
+    int array[][] = {{5,6,7},{4,8,9}};
+    int array1[][] = {{6,4},{5,7},{1,1}};
+    int array2[][] = new int[3][3];
+    int x= array.length;
+    System.out.println("Matrix 1 : ");
+      for(int i = 0; i < x; i++) {
+      for(int j = 0; j <= x; j++) {
+        System.out.print(" "+ array[i][j]);
+      }
+
+    System.out.println();
+    }
+  
+    int y= array1.length;
+    System.out.println("Matrix 2 : ");
+      for(int i = 0; i < y; i++) {
+      for(int j = 0; j < y-1; j++) {
+        System.out.print(" "+array1[i][j]);
+      }  
+
+    System.out.println();
+    }
+    
+
+      for(int i = 0; i < x; i++) {
+      for(int j = 0; j < y-1; j++) {
+        for(int k = 0; k < y; k++){
+          
+          array2[i][j] += array[i][k]*array1[k][j];
+        
+           }
+      
+   }  
+     
+
+}
+    
+
+System.out.println("Multiply of both matrix : ");
+    for(int i = 0; i < x; i++) {
+      for(int j = 0; j < y-1; j++) {
+        System.out.print(" "+array2[i][j]);
+      }  
+    
+System.out.println();
+    }
+  }
+}
+
+
+OUTPUT:
+
+Matrix 1:
+5 6 7
+4 8 9
+
+Matrix2:
+6 4
+5 7
+1 1
+
+Multiply of both matrix:
+67 69
+73 81
+
+
+
+
+
+
+
+
+PRACTICAL NO. 6
+AIM: - Program using packages.
+PROGRAM:
+
+A.java
+package pack1;
+ public class A  {
+    public void display()     {
+	System.out.println("\n\t class A");
+     }
+   }     
+
+ 
+B.java
+package pack2;
+ public class B  {
+     public void displayB()    {
+	int a=10,b=20;
+	System.out.println("Add="+(a+b));
+     }
+   }    
+
+                                                   
+Packagetest.java
+import pack1.*;
+import pack2.*;
+class packagetest {
+ public static void main(String args[])
+ {
+	A a1=new A();
+	B b1=new B();
+	a1.display();
+	b1.displayB();
+  }
+ }
+
+
+OUTPUT:
+
+Class A
+Add=30
+PRACTICAL NO. 7
+AIM: - Program to print Floyd’s triangle.
+1
+2     3
+4     5    6   
+7   …… ……..10
+11 ………………..15
+.
+.
+79………………………….91*/
+
+PROGRAM:
+
+import java.io.*;
+public class pyramid{
+public static void main(String args[])
+{
+		int i=1,j;
+		int num = 1;
+		while(num<=91)
+		{
+			for(j=1; j<=i; j++){
+				System.out.print (num + " ");
+				num++;}
+		i++;
+		System.out.print("\n");			
+		}
+          }
+}
+
+
+
+
+
+OUTPUT:
+
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+16 17 18 19 20 21 
+22 23 24 25 26 27 28 
+29 30 31 32 33 34 35 36 
+37 38 39 40 41 42 43 44 45 
+46 47 48 49 50 51 52 53 54 55 
+56 57 58 59 60 61 62 63 64 65 66 
+67 68 69 70 71 72 73 74 75 76 77 78 
+79 80 81 82 83 84 85 86 87 88 89 90 91 
+
+
+
+
+
+
+
+
+
+
+
+
+PRACTICAL NO. 8
+AIM: - program to produce the following form of Floyd’s triangle.
+ 1
+ 0 1
+ 1 0 1
+ 0 1 0 1
+ 0 1 0  1
+
+PROGRAM:
+
+class sam {
+	public static void main(String args[])
+	{
+	int a=1;
+	for(int j=0;j<5;j++)	{
+		for(int i=0;i<=j;i++)		{
+			if(a==0)
+			{
+				System.out.print(" "+a++);
+			}
+			else
+			{
+				System.out.print(" "+a--);
+			}
+		}
+		System.out.print("\n");
+	}
+	}
+}
+
+
+OUTPUT:
+
+1
+ 0 1
+ 0 1 0
+ 1 0 1 0
+ 1 0 1 0 1
+PRACTICAL NO. 9
+AIM: - Program to generate a Triangle.
+ 1
+ 2 2
+ 3 3 3
+4 4 4 4 and so on as per user given number
+
+PROGRAM:
+
+import java.io.*;
+
+public class triangle1 {
+         public static void main(String args[])
+	{
+            DataInputStream in=new DataInputStream(System.in);
+	   int num=0;
+	   try		{
+		System.out.println("Enter number:");
+		num = Integer.parseInt(in.readLine());
+		}
+	catch(Exception e)	{}
+           for(int i=1;i<=num;i++)            {
+                for(int j=1;j<=i;j++)	     {
+                System.out.print(" "+i+" ");
+              }
+                 System.out.print("\n");
+              } 
+          }      }
+
+
+OUTPUT:
+
+Enter number:
+5
+
+1
+22
+333
+4444
+55555
+PRACTICAL NO. 10
+AIM: - Program using Methodoverloading.
+
+PROGRAM:
+
+class student
+{	
+        int roleno;
+	String name;
+	float sub1,sub2,sub3=0;
+	
+	  student( float s1,float s2,float s3 )
+	{
+		sub1=s1;
+		sub2=s2;
+		sub3=s3;
+	}
+	
+	 student( float s1,float s2)
+		{
+		   sub1=s1;
+		   sub2=s2;
+	    }
+	
+float total()
+{
+	return(sub1+sub2+sub3);
+}
+
+float per()
+{
+return 	total()/3;
+}
+}
+
+class methodover
+{
+         public static void main (String[]args)
+	{
+		
+		student s1=new student(20,30,40);
+		System.out.println("the total marks  of S.S.C. =" + s1.per());
+	System.out.println("the total marks  of S.S.C. =" + s1.total());
+	
+		student s2=new student(10,50,0);
+	System.out.println("the total marks  of H.S.C. =" + s2.total());
+		System.out.println("the total marks  of H.S.C. =" + s2.per());
+	
+	
+	}
+}
+
+
+OUTPUT:
+
+the total marks  of S.S.C. =30.0
+the total marks  of S.S.C. =90.0
+the total marks  of H.S.C. =60.0
+the total marks  of H.S.C. =20.0
+
+
+
+
+
+
+
+
+
+PRACTICAL NO. 11
+AIM: - Program using Inheritance.
+
+PROGRAM:
+
+class staff
+{
+	int code;
+	String name;
+	
+	staff( int a,String na)
+	{
+		code=a;
+		name=na;
+	}
+};
+
+class teacher extends staff
+{
+	String subject;
+	String  publication;
+		
+	teacher( String sub, String  pub,int a, String na)
+	{
+		super(a,na);
+	    subject=sub;
+	    publication=pub; 
+	}	
+		
+};
+
+
+class typist extends staff
+{
+	 public int speed;
+	
+	typist(int d,int a,String na)
+	{
+		super(a,na);
+        speed=d;
+	}
+};
+
+class officer extends staff
+{
+	String grade;
+	officer( String g,int a,String na)
+	{
+		super(a,na);
+	   grade=g;		
+	}
+};
+
+class regular extends typist {
+	int salary;
+	regular (int sal,int d)
+		{
+		super(1,1,"k");
+		salary=sal;
+	}
+};
+
+class causal extends typist
+{
+int wages;
+causal( int w,int d )
+{	
+super(1,1,"k");
+    wages=w;
+     //speed=d;
+} 
+};
+
+
+class employee  {
+	public static void main (String[] args) {
+		
+    teacher t=new teacher( "navnit","math",20,"rutuja");
+    System.out.print( " \n the details of teacher   " );
+    System.out.print( " \n the name of subject is  = " + t.subject);
+System.out.print(  " \n the name of publication is  = " + t.publication );
+    System.out.print( " \n the name of  employee = " +  t.name);
+    System.out.print(  " \n the code of employee  = " +  t.code);
+System.out.print(  " \n ------------------------------------------");
+    officer obj = new officer( "A",30,"roshan");
+   
+   System.out.print( " \n the details of officer   " );
+ System.out.print( " \n the  grade  of subject is   = " + obj.grade);
+ System.out.print( "\n the name of  employee = " +  obj.name);
+ System.out.print(  " \n the code of employee  = " +  obj.code);
+   
+System.out.print(  " \n ------------------------------------------");
+    regular obj1= new regular(2000,30);
+System.out.print( " \n the details of regular typist  " );
+System.out.print( " \n the salary of employee = " +  obj1.salary);
+ System.out.print(  " \n the speed of employee = " +  obj1.speed);
+causal obj3 = new causal(50,300);
+System.out.print(  " \n ------------------------------------------");
+
+System.out.print( " \n the details of causal typist   " );
+System.out.print( " \n the daily wage of an employee = " +  obj3.wages);
+ System.out.print(  " \n the speed of employee = " +  obj3.speed);
+}
+}
+
+
+OUTPUT:
+
+The details of teacher    
+ The name of subject is = Maths
+ The name of publication is = Navneet
+ The name of employee = Rutuja
+ The code of employee = 20 
+ ------------------------------------------ 
+ The details of officer    
+ The grade of subject is   = A
+ The name of employee = Roshan 
+ The code of employee = 30 
+ ------------------------------------------ 
+ The details of regular typist   
+ The salary of employee = 2000 
+ The speed of employee = 1 
+ ------------------------------------------ 
+ The details of causal typist    
+ The daily wage of an employee = 50 
+ The speed of employee = 1
+PRACTICAL NO. 12
+AIM: - Program to print a following pattern.
+          *
+        ***
+      *****
+    *******
+      *****
+        ***
+          *    
+
+PROGRAM:
+
+class Pattern
+{
+public static void main(String args[])
+{
+int i,j,k,m=8,m1=0;
+
+for(i=1;i<5;i++)
+{
+     for(k=0;k<m;k++)
+    {
+     System.out.print(" ");
+    }   
+     for(j=1;j<i;j++)
+     {
+     System.out.print("*");
+     }
+    for(j=1;j<i-1;j++)
+     {
+     System.out.print("*");
+     }
+     
+   m=m-1;
+System.out.println("");
+}
+
+
+
+for(i=5;i>1;i--)
+{
+     for(k=4;k>m1;k--)
+    {
+     System.out.print(" ");
+    }   
+     for(j=i;j>1;j--)
+     {
+     System.out.print("*");
+     }
+    for(j=i-1;j>1;j--)
+     {
+     System.out.print("*");
+     }
+     
+   m1=m1-1;
+System.out.println("");
+
+   }    
+ }
+}
+
+
+OUTPUT:
+
+
+        *
+        ***
+      *****
+    *******
+      *****
+        ***
+          *
+
+
+
+
+
+
+
+
+PRACTICAL NO. 13
+AIM: - Program for Bank Account.
+
+PROGRAM:
+
+import java.io.*;
+class Account  {
+String Name,TypeAc;
+int Acno;
+float Bal=10000;
+
+void Getdata(String nm,int aat,String tat)
+{
+Name=nm;
+Acno=aat;
+TypeAc=tat;
+
+}
+
+void Deposite(float at) {
+
+Bal=Bal+at;
+
+System.out.println("\n Amout Deposited "+at);
+System.out.println("\n Current Balance = " +Bal);
+}
+
+void WithDraw(float dr)
+{
+if(Bal<dr)
+{
+System.out.println("\n Cannot Wthdraw As balance is Insufficient");
+}
+else
+{
+Bal=Bal-dr;
+System.out.println("\n Amount Withdrwn is  "+dr);
+System.out.println("\n Curent Balance =  " +Bal);
+}
+}
+
+void Display()
+{
+System.out.println("\n Name Of Customer : "+Name);
+System.out.println("\n Balance Amount :"+Bal);
+}
+}
+
+class Bank
+{
+public static void main(String args[])
+{
+Account A1=new Account();
+DataInputStream in=new DataInputStream(System.in);
+BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+String n,ta;
+float amt,draw;
+int an,m;
+
+
+try
+{
+System.out.println("\nEnter The Name Of Customer");
+n=in.readLine();
+System.out.println("\nEnter The Account Number Of Customer");
+an=Integer.parseInt(in.readLine());
+System.out.println("\nEnter The Type Of Account Of Customer");
+ta=in.readLine();
+A1.Getdata(n,an,ta);
+
+System.out.println("\n Enter The Choice");
+System.out.println("1. To Deposite an Amount");
+System.out.println("2. To Withdraw an Amount");
+System.out.println("3. To Check BAlance");
+m=Integer.parseInt(in.readLine());
+switch(m) {
+
+case 1:
+{
+System.out.println("\n\nEnter The Amount To Deposite");
+amt=Float.parseFloat(in.readLine());
+A1.Deposite(amt);
+break;
+}
+case 2:
+{
+System.out.println("\n \n Enter The Amount To Withdrwn");
+draw=Float.parseFloat(in.readLine());
+A1.WithDraw(draw);
+break;
+}
+case 3:
+{
+A1.Display();
+break;
+}
+default:
+{
+System.out.print("\n Wrong Choice");
+break;
+}
+}
+}
+catch(Exception e) {}
+}
+}
+
+OUTPUT:
+
+Enter the Name Of Customer
+Raman
+Enter the Account Number Of Customer
+3452
+Enter the Type Of Account Of Customer
+Fixed
+
+ Enter The Choice
+1. To Deposit an Amount
+2. To Withdraw an Amount
+3. To Check Balance
+1
+
+Enter The Amount To Deposit
+1500
+
+ Amount Deposited 1500.0
+Current Balance = 11500.0
+PRACTICAL NO. 14
+AIM: - Program to print Sum of Series.
+PROGRAM:
+
+class series
+{
+public static void main(String args[])
+{
+int n=10;
+int i=0;
+int sum=0;
+int x=2;
+
+while(i<n)
+{
+sum+=Math.pow(x,i);
+i++;
+}
+System.out.println("Sum of Series 1+X+X^2+X^3+....= " +sum);
+}
+}
+
+OUTPUT:
+
+Sum of Series 1+X+X^2+X^3+....= 1023
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRACTICAL NO. 15
+AIM: - Program for Multithreading.
+
+PROGRAM:
+
+class FiveTable extends Thread
+{
+
+public void run()
+{
+for(int i=1;i<=5;i++)
+System.out.println(i+"Fives are " +(i*5));
+}
+}
+class SevenTable extends Thread
+{
+public void run()
+{
+for(int i=1;i<=5;i++)
+System.out.println(i+"Sevens are " +(i*7));
+}
+}
+class ThirteenTable extends Thread
+{
+public void run()
+{
+for(int i=1;i<=5;i++)
+System.out.println(i+"Thirteens are " +(i*13));
+}
+}
+public class MultiThreadingDemo
+{
+public static void main(String args[])
+{
+FiveTable five=new FiveTable();
+SevenTable seven=new SevenTable();
+ThirteenTable thirteen=new ThirteenTable();
+five.start();
+seven.start();
+thirteen.start();
+}
+}
+OUTPUT:
+
+1 Fives are 5
+1 Sevens are 7
+1 Thirteens are 13
+2 Fives are 10
+2 Sevens are 14
+2 Thirteens are 26
+3 Fives are 15
+3 Sevens are 21
+3 Thirteens are 39
+4 Fives are 20
+4 Sevens are 28
+4 Thirteens are 52
+5 Fives are 25
+5 Sevens are 35
+5 Thirteens are 65
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRACTICAL NO. 16
+AIM: - Program for calculator.
+
+PROGRAM:
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.lang.*;
+
+public class calc extends JFrame
+{
+JButton b0,b1,b2,b3,b4,b5,b6,b7,b8,b9;
+JButton badd,bsub,bmul,bdiv,bequal;
+JLabel l1;
+
+calc(String title)
+{
+super(title);
+l1 = new JLabel("0");
+l1.setHorizontalAlignment(JTextField.RIGHT);
+		
+Container con = getContentPane();
+	
+JPanel p1 = new JPanel();
+GridLayout g1 = new GridLayout(5,3);
+p1.setLayout(g1);
+b0 = new JButton("0");
+b1 = new JButton("1");
+b2 = new JButton("2");
+b3 = new JButton("3");
+b4 = new JButton("4");
+b5 = new JButton("5");
+b6 = new JButton("6");
+b7 = new JButton("7");
+b8 = new JButton("8");
+b9 = new JButton("9");
+badd = new JButton("+");
+bsub = new JButton("-");
+bmul = new JButton("*");
+bdiv = new JButton("/");
+bequal  = new JButton("=");
+	
+p1.add(b7);
+p1.add(b8);
+p1.add(b9);
+p1.add(b4);
+p1.add(b5);
+p1.add(b6);
+p1.add(b1);
+p1.add(b2);
+p1.add(b3);
+p1.add(b0);
+p1.add(bequal);
+p1.add(bdiv);
+p1.add(badd);
+p1.add(bsub);
+p1.add(bmul);
+	
+con.setLayout(new BorderLayout());
+con.add(l1, BorderLayout.NORTH);
+con.add(p1, BorderLayout.CENTER);
+
+buttonlistener blist = new buttonlistener(this);
+b0.addActionListener(blist);
+b1.addActionListener(blist);
+b2.addActionListener(blist);
+b3.addActionListener(blist);
+b4.addActionListener(blist);
+b5.addActionListener(blist);
+b6.addActionListener(blist);
+b7.addActionListener(blist);
+b8.addActionListener(blist);
+b9.addActionListener(blist);
+badd.addActionListener(blist);
+bsub.addActionListener(blist);
+bmul.addActionListener(blist);
+bdiv.addActionListener(blist);
+bequal.addActionListener(blist);
+}
+	
+public static void main(String args[])
+{
+calc c1 = new calc("calculator");
+c1.setSize(200,250);
+c1.setLocation(250,250);
+c1.setVisible(true);
+c1.setDefaultCloseOperation(EXIT_ON_CLOSE);
+}
+}
+
+class buttonlistener implements ActionListener
+{
+calc c1;
+String sa, sb, sc;
+int a, b, c;
+int op;
+String bval;
+	
+public buttonlistener(calc c1)
+{
+this.c1=c1;
+}
+
+public void actionPerformed(ActionEvent e)
+{
+if (e.getSource() == c1.bequal)
+{
+switch(op)
+{
+case 1 :
+ a = b + a; break;
+case 2 :
+ a = b - a; break;
+case 3 :
+ a = b * a; break;
+case 4 :
+ a = b / a; break;
+}
+c1.l1.setText(Integer.toString(a));
+}
+else
+if(e.getSource() == c1.badd)
+{
+sa = c1.l1.getText();
+b = Integer.parseInt(sa);
+c1.l1.setText("0");
+a=0;
+op=1;
+}
+else
+if(e.getSource() == c1.bsub)
+{
+sa = c1.l1.getText();
+b = Integer.parseInt(sa);
+c1.l1.setText("0");
+a=0;
+op=2;
+}
+else
+if(e.getSource() == c1.bmul)
+{
+sa = c1.l1.getText();
+b = Integer.parseInt(sa);
+c1.l1.setText("0");
+a=0;
+op=3;
+}
+else
+if(e.getSource() == c1.bdiv)
+{
+sa = c1.l1.getText();
+b = Integer.parseInt(sa);
+c1.l1.setText("0");
+a=0;
+op=4;
+}
+else
+{
+bval = e.getActionCommand();
+a = a* 10 + Integer.parseInt(bval);
+c1.l1.setText(Integer.toString(a));
+}
+}
+}
+
+OUTPUT:
+
+ 
